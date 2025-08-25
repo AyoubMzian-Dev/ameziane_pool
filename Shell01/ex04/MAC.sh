@@ -1,2 +1,1 @@
-#!/bin/sh
-ifconfig -a | grep ether | egrep -io '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}'
+ifconfig | grep ether | awk '{print $2}'

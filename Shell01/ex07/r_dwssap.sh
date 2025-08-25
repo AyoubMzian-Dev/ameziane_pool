@@ -1,4 +1,3 @@
-#!/bin/sh
 cat /etc/passwd | \
 grep -v '^#' | \
 sed -n '2~2p' | \
