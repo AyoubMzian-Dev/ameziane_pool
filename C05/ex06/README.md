@@ -1,0 +1,1 @@
+# Exercise 06: ft_is_prime
