@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../ft_stock_str.h"
+#include "ft_stock_str.h"
 
 static int	ft_strlen(char *str)
 {

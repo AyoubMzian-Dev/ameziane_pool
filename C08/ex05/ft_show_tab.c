@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include "../ft_stock_str.h"
+#include "ft_stock_str.h"
 
 static void	ft_putstr(char *str)
 {
