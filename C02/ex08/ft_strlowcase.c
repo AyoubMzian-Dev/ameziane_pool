@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 char	*ft_strlowcase(char *str)
 {
 	int	i;

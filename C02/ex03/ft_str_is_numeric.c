@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 int	ft_str_is_numeric(char *str)
 {
 	int	i;

@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 char	*ft_strupcase(char *str)
 {
 	int	i;

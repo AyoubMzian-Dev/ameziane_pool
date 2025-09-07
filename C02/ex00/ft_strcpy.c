@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;

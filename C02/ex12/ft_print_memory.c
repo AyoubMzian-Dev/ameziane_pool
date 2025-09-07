@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -8,9 +9,9 @@ void	ft_putchar(char c)
 void	print_hex_address(void *addr)
 {
 	unsigned long	address;
-	char			*hex;
-	int				i;
-	char			buffer[16];
+	char	*hex;
+	int	i;
+	char	buffer[16];
 
 	hex = "0123456789abcdef";
 	address = (unsigned long)addr;
@@ -34,7 +35,7 @@ void	print_hex_address(void *addr)
 void	print_hex_content(void *addr, unsigned int size)
 {
 	unsigned char	*bytes;
-	char			*hex;
+	char	*hex;
 	unsigned int	i;
 
 	hex = "0123456789abcdef";
