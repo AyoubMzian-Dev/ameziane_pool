@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
 void ft_putchar(char c)
@@ -70,4 +71,3 @@ int ft_ten_queens_puzzle(void)
     solve(0, board, &count);
     return (count);
 }
-
