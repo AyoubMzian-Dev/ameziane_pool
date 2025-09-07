@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
 void ft_putstr(char *str)
