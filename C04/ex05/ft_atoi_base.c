@@ -1,30 +1,20 @@
-int	ft_strlen(char *str)
-{
-	int	len;
+/* don't forget the headers hear */
+#include <unistd.h>
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int	is_valid_base(char *base)
+// Helper to check if base is valid (from ex04)
+int	ft_check_base(char *base)
 {
 	int	i;
 	int	j;
-	int	len;
 
-	len = ft_strlen(base);
-	if (len <= 1)
-		return (0);
 	i = 0;
-	while (i < len)
+
+	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == ' '
-			|| (base[i] >= 9 && base[i] <= 13))
+		if (base[i] == '+' || base[i] == '-')
 			return (0);
 		j = i + 1;
-		while (j < len)
+		while (base[j])
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -32,21 +22,23 @@ int	is_valid_base(char *base)
 		}
 		i++;
 	}
-	return (1);
+	return (i >= 2); // Base must have at least 2 unique characters
 }
 
-int	get_index_in_base(char c, char *base)
+// Helper to get index of char in base
+int	get_char_index(char c, char *base)
 {
 	int	i;
 
 	i = 0;
-	while (base[i])
+
+	while (base[i] != '\0')
 	{
 		if (base[i] == c)
 			return (i);
 		i++;
 	}
-	return (-1);
+	return (-1); // Not found
 }
 
 int	ft_atoi_base(char *str, char *base)
@@ -55,28 +47,71 @@ int	ft_atoi_base(char *str, char *base)
 	int	sign;
 	int	result;
 	int	base_len;
-	int	digit;
+	int	char_val;
 
-	if (!is_valid_base(base))
+	if (!ft_check_base(base))
 		return (0);
-	base_len = ft_strlen(base);
+
+	base_len = 0;
+
+	while (base[base_len])
+		base_len++;
+
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+
+	// Skip leading whitespace
+
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	{
 		i++;
+	}
+
+	// Handle signs
+
 	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
+		{
 			sign *= -1;
+		}
 		i++;
 	}
-	digit = get_index_in_base(str[i], base);
-	while (digit != -1)
+
+	// Convert digits
+
+	while ((char_val = get_char_index(str[i], base)) != -1)
 	{
-		result = result * base_len + digit;
+		result = result * base_len + char_val;
 		i++;
-		digit = get_index_in_base(str[i], base);
 	}
 	return (result * sign);
+	}
+
+	// Simpler more advanced version
+	int	ft_atoi_base_simple(char *str, char *base)
+	{
+		int		base_len;
+		int		sign;
+		long	result;
+		int		char_val;
+
+		base_len = 0;
+		sign = 1;
+		result = 0;
+		if (!ft_check_base(base))
+			return (0);
+		while (*str)
+		{
+			if (*str == '-')
+				sign *= -1;
+			else if ((char_val = get_char_index(*str, base)) != -1)
+			{
+				result = result * base_len + char_val;
+			}
+			str++;
+		}
+		return (result * sign);
 }

@@ -1,13 +1,10 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
 void	ft_putstr(char *str)
 {
 	int	i;
 
-	if (!*str)
-	{
-		write(1, "error: invalid input", 20);
-	}
 	i = 0;
 	while(str[i] != '\0')
 	{

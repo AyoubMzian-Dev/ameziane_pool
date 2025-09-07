@@ -1,31 +1,19 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-int	is_valid_base(char *base)
+// Helper to check if base is valid
+int	ft_check_base(char *base)
 {
 	int	i;
 	int	j;
-	int	len;
 
-	len = ft_strlen(base);
-	if (len <= 1)
-		return (0);
 	i = 0;
-	while (i < len)
+	while (base[i])
 	{
 		if (base[i] == '+' || base[i] == '-')
 			return (0);
 		j = i + 1;
-		while (j < len)
+		while (base[j])
 		{
 			if (base[i] == base[j])
 				return (0);
@@ -33,29 +21,32 @@ int	is_valid_base(char *base)
 		}
 		i++;
 	}
-	return (1);
-}
-
-void	ft_putnbr_base_recursive(long nbr, char *base, int base_len)
-{
-	if (nbr >= base_len)
-		ft_putnbr_base_recursive(nbr / base_len, base, base_len);
-	write(1, &base[nbr % base_len], 1);
+	return (i >= 2); // Base must have at least 2 unique characters
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
+	long	nb;
 	int		base_len;
-	long	long_nbr;
 
-	if (!is_valid_base(base))
+	base_len = 0;
+	if (!ft_check_base(base))
 		return ;
-	base_len = ft_strlen(base);
-	long_nbr = nbr;
-	if (long_nbr < 0)
+	while (base[base_len])
+		base_len++;
+	nb = nbr;
+	if (nb < 0)
 	{
 		write(1, "-", 1);
-		long_nbr = -long_nbr;
+		nb = -nb;
 	}
-	ft_putnbr_base_recursive(long_nbr, base, base_len);
+	if (nb < base_len)
+	{
+		write(1, &base[nb], 1);
+	}
+	else
+	{
+		ft_putnbr_base(nb / base_len, base);
+		write(1, &base[nb % base_len], 1);
+	}
 }
