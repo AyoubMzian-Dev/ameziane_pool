@@ -15,3 +15,14 @@
 - Can use `write` directly or build a `ft_putchar` helper
 
 **Implementation approach:** Start with 'a', increment until 'z'.
+
+### Solution Explanation
+
+The `ft_print_alphabet` function prints the lowercase alphabet to the screen.
+
+1.  **Initialization**: A `char` variable, `letter`, is initialized to `'a'`.
+2.  **Looping**: A `while` loop continues as long as `letter` is less than or equal to `'z'`.
+3.  **Printing**: Inside the loop, `write(1, &letter, 1)` prints the current character.
+4.  **Incrementing**: `letter++` moves to the next character in the ASCII table.
+
+This process repeats until all characters from 'a' to 'z' have been printed.

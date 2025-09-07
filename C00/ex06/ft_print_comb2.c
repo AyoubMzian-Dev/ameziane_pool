@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -29,5 +30,33 @@ void	ft_print_comb2(void)
 			b++;
 		}
 		a++;
+	}
+}
+
+// easier way to make the exercise
+
+void	ft_print_comb2_2(void)
+{
+	char	digits[5];
+
+	digits[0] = '0';
+	while (digits[0] <= '9')
+	{
+		digits[1] = digits[0];
+		while (digits[1] <= '9')
+		{
+			digits[2] = ' ';
+			digits[3] = digits[1] + 1;
+			while (digits[3] <= '9')
+			{
+				digits[4] = '\0';
+				write(1, digits, 5);
+				if (!(digits[0] == '9' && digits[1] == '8'))
+					write(1, ", ", 2);
+				digits[3]++;
+			}
+			digits[1]++;
+		}
+		digits[0]++;
 	}
 }

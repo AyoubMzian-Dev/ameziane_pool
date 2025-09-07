@@ -31,3 +31,17 @@
 - **Mathematical combination generation**
 
 **This is the capstone exercise** - combines all previous concepts with algorithmic complexity.
+
+### Solution Explanation (Recursive Approach)
+
+Solving `ft_print_combn` requires a way to handle a variable number of nested loops. Recursion is a powerful technique for this. Here is a conceptual breakdown of a recursive solution:
+
+1.  **Main Function `ft_print_combn(n)`**: This function will handle initial checks (like `n` being between 1 and 9) and will likely prepare an array or buffer to hold the current combination. It will then make the first call to a recursive helper function.
+
+2.  **Recursive Helper Function `generate(combination, index, start_digit)`**:
+    *   **Base Case**: The recursion stops when the `index` reaches `n`. At this point, a full combination of `n` digits has been generated in the `combination` array. The function then prints the contents of the array and adds a comma if it's not the last possible combination.
+    *   **Recursive Step**: The function loops through possible digits, starting from `start_digit`. For each digit, it:
+        a.  Places the digit in the current `combination` array at the given `index`.
+        b.  Makes a recursive call to itself: `generate(combination, index + 1, digit + 1)`. The `index` is incremented to fill the next spot in the combination, and `start_digit` is incremented to ensure the next digit is always greater than the current one.
+
+This method effectively creates a "call stack" of loops, allowing it to generate combinations for any `n` without hardcoding the loop structure.
