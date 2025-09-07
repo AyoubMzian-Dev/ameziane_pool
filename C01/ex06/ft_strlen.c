@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 int	ft_strlen(char *str)
 {
 	int	length;
