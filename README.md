@@ -34,7 +34,11 @@ This repository is organized into modules, each corresponding to a set of concep
 ├── Rush00/
 ├── Rush01/
 ├── Rush02/
-├── Exam/
+├── BSQ/
+├── Exam00/
+├── Exam01/
+├── Exam02/
+├── FinalExam/
 ├── Subjects/
 └── README.md
 ```
@@ -70,9 +74,22 @@ Intensive weekend projects done in groups to solve a larger problem under time p
 - **Rush00:** Create a program that displays a pattern of characters.
 - **Rush01:** A logic puzzle solver (Skyscraper).
 - **Rush02:** A program that converts numbers into words.
+- **BSQ (Biggest Square) :** A project to find the largest square in a 2D map, combining file I/O, dynamic memory, and algorithmic thinking.
 
-### Exams
+## Exams
 A collection of practice exams to prepare for the final exam.
+
+### Exam 00
+This exam tests fundamental C programming concepts, typically covering topics from the `C00` module. It assesses basic I/O, variable manipulation, simple loops, and conditional statements.
+
+### Exam 01
+Building upon Exam 00, this exam introduces and evaluates understanding of pointers, memory addresses, and basic string manipulation. It covers concepts from `C00` and `C01` modules.
+
+### Exam 02
+This exam focuses on advanced string handling, character classification, and in-place string transformations. It encompasses topics from `C00`, `C01`, and `C02` modules.
+
+### Final Exam
+The final exam is a comprehensive assessment of all C programming concepts covered throughout the Piscine. It includes advanced string functions, comparison, concatenation, substring searching, number conversions, base manipulation, and complex problem-solving, drawing from all C modules (`C00` through `C12`).
 
 ## 📊 Progress Tracker
 
@@ -80,24 +97,28 @@ Here is the current status of my progress through the Piscine modules.
 
 | Module    | Status | Notes                               |
 | :-------- | :----: | :---------------------------------- |
+| **Shell00**|  ✅   | Completed all exercises.            |
+| **Shell01**|  ✅   | Completed all exercises.            |
 | **C00**   |   ✅   | Completed all exercises.            |
 | **C01**   |   ✅   | Completed all exercises.            |
 | **C02**   |   ✅   | Completed all exercises.            |
-| **C03**   |   ❌   | Not started.                        |
-| **C04**   |   ❌   | Not started.                        |
-| **C05**   |   ❌   | Not started.                        |
-| **C06**   |   ❌   | Not started.                        |
-| **C07**   |   ❌   | Not started.                        |
-| **C08**   |   ❌   | Not started.                        |
-| **C09**   |   ❌   | Not started.                        |
-| **C10**   |   ❌   | Not started.                        |
-| **C11**   |   ❌   | Not started.                        |
-| **C12**   |   ❌   | Not started.                        |
-| **Shell00**|  ❌   | Not started.                        |
-| **Shell01**|  ❌   | Not started.                        |
-| **Rush00**|   ❌   | Not Made.                          |
+| **Exam 00** |   ✅   | Completed.                          |
+| **Rush00**|   ✅   | Completed.                         |
+| **C03**   |   ✅   | Completed all exercises.            |
+| **C05**   |   ✅   | Completed all exercises.            |
+| **Exam 01** |   ✅   | Completed.                          |
 | **Rush01**|   ✅   | Completed.                          |
-| **Rush02**|   ❌   | Not started.                        |
+| **C06**   |   ✅   | Completed all exercises.            |
+| **C07**   |   ✅   | Completed all exercises.            |
+| **C08**   |   ✅   | Completed all exercises.            |
+| **Exam 02** |   ✅   | Completed.                          |
+| **Rush02**|   ✅   | Completed.                         |
+| **BSQ**   |   ✅   | Completed.                          |
+| **C09**   |   ✅   | Completed all exercises.            |
+| **C10**   |   ✅   | Completed all exercises.            |
+| **C11**   |   ✅   | Completed all exercises.            |
+| **C12**   |   ✅   | Completed all exercises.            |
+| **Final Exam**|   ✅   | Completed.                          |
 
 **Legend:** ✅ Completed | ⏳ In Progress | ❌ Not Started
 
