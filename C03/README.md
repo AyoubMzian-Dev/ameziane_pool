@@ -1,7 +1,5 @@
 # C03 - String Functions
 
-**Subject:** C03 - String manipulation functions module of the 1337/42 Piscine
-
 ## 📋 Module Overview
 
 This module focuses on implementing fundamental string manipulation functions. You'll learn to work with string comparison, concatenation, and searching algorithms.

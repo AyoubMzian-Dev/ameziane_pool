@@ -2,29 +2,30 @@
 
 **Function:** `char *ft_strncat(char *dest, char *src, unsigned int nb);`
 
-**Description:** Reproduce the behavior of the `strncat` function.
+**Subject:** Write a function that concatenates two strings, but only appends at most `nb` bytes from `src`.
 
-**No allowed functions:** None
-
-**Purpose:** Concatenate at most `nb` characters from `src` to the end of `dest`.
+**Allowed functions:** None
 
 **Key Points:**
-- Find end of `dest` string
-- Copy at most `nb` characters from `src` to end of `dest`
-- Stop copying if null terminator in `src` is reached before `nb` characters
-- Always null-terminate the result
-- Return pointer to `dest`
+-   Appends at most `nb` characters from `src` to the end of `dest`.
+-   The resulting string in `dest` is always null-terminated.
+-   Offers a degree of buffer overflow protection compared to `strcat` by limiting the number of bytes copied from `src`.
+-   The `nb` parameter refers to the maximum number of characters to take from `src`, not the total size of `dest`.
 
-**Process:**
-1. Find length of `dest`
-2. Copy up to `nb` characters from `src`
-3. Always add null terminator
+## Concepts Covered
 
-**Example:**
-```c
-char dest[20] = "Hello ";
-ft_strncat(dest, "World!!!", 5);
-// dest now contains "Hello World"
-```
+-   **String Concatenation**: Appending one string to another with a length limit.
+-   **Buffer Size**: Understanding the `nb` parameter's role in limiting the number of bytes appended.
+-   **Null Terminator**: Ensuring the destination string is properly null-terminated.
+-   **Memory Safety**: Preventing buffer overflows by respecting the `nb` limit.
 
-**Safety:** Limits number of characters copied, but still no buffer bounds checking.
+## Solution Explanation
+
+The `ft_strncat` function takes three arguments: `dest` (destination string), `src` (source string), and `nb` (maximum number of bytes to append from `src`).
+
+1.  **Find End of Destination**: The function first iterates through `dest` to find its null terminator.
+2.  **Append Source (Limited)**: It then iterates through `src`, copying characters to `dest` starting from `dest`'s null terminator position. This copying continues as long as the current index `j` is less than `nb` AND `src[j] != '\0'`).
+3.  **Null Terminate Result**: After the loop, a new null terminator is placed at the end of the newly concatenated string in `dest`.
+4.  **Return Value**: The function returns a pointer to the destination string (`dest`).
+
+This function provides a safer alternative to `strcat` by allowing the caller to specify the maximum number of bytes to append, thus helping to prevent buffer overflows.

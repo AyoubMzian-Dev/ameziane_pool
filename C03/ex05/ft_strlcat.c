@@ -1,3 +1,4 @@
+/* don't forget the headers hear */
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	dest_len;
